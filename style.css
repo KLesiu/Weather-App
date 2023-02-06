@@ -96,3 +96,26 @@ ul > li span {
   padding: 30px;
   width: 100%;
 }
+@media screen and (max-width: 700px) {
+  #mainContainer {
+    height: 80vh;
+    width: 90vw;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  ul {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  input {
+    width: 40%;
+  }
+  ul > li {
+    border: none;
+    margin-top: 10px;
+  }
+  ul > li:first-child {
+    border: none;
+  }
+}

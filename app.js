@@ -32,13 +32,6 @@ const getCityWeather = (lat, lon) => {
       return response.json();
     })
     .then(function (resp) {
-      console.log(resp);
-      console.log(resp.main.temp);
-      console.log(resp.main.feels_like);
-      console.log(resp.weather[0].main || resp.weather.main);
-      console.log(resp.wind.speed);
-      console.log(resp.main.humidity);
-      console.log(resp.sys.country);
       const temp = resp.main.temp;
       const feelsTemp = resp.main.feels_like;
       const weather = resp.weather[0].main || resp.weather.main;

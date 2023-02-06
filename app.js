@@ -82,4 +82,4 @@ const addImage = (weather) => {
   }
 };
 button.addEventListener("click", getCityFromInput);
-getCityCoordinates("Sieradz");
+getCityCoordinates("Londyn");

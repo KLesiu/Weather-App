@@ -6,8 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourWeather</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <main id="mainContainer">
+      <h1>
+        Your<span class="span1">We</span><span class="span2">at</span
+        ><span class="span3">her</span>
+      </h1>
+      <section id="weatherInput">
+        <label for="city">Type your city</label>
+        <input type="text" name="city" />
+        <button>CHECK</button>
+      </section>
+      <section id="weatherArea">
+        <img src="./img/rain.png" />
+        <h1 class="cityName">London,<span class="country">GB</span></h1>
+
+        <ul>
+          <li><b>Temp:</b><span class="temp"> 282F</span></li>
+          <li><b>Feels like:</b><span class="feels_like"> 282F</span></li>
+          <li><b>Weather:</b><span class="weather"> Clouds</span></li>
+          <li><b>Wind:</b><span class="wind"> 1.03m/s</span></li>
+          <li><b>Humidity:</b><span class="humidity"> 56%</span></li>
+        </ul>
+      </section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
+<!-- Thunderstorm Clouds Snow Rain Clear -->

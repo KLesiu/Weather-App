@@ -14,13 +14,13 @@ const getCityCoordinates = (city) => {
     .then(function (resp) {
       const lat = resp[0].lat;
       const lon = resp[0].lon;
-      getCityWeather(lat, lon);
+      getCityWeather(lat, lon, city);
     })
     .catch(function () {
       alert("Please, enter the correct city");
     });
 };
-const getCityWeather = (lat, lon) => {
+const getCityWeather = (lat, lon, city) => {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=c1333c94dc45bb3213e10b24ec0db7f0
     `,
@@ -38,7 +38,7 @@ const getCityWeather = (lat, lon) => {
       const wind = resp.wind.speed;
       const humidity = resp.main.humidity;
       const country = resp.sys.country;
-      const nameCity = resp.name;
+      const nameCity = city;
       updateData(temp, feelsTemp, weather, wind, humidity, country, nameCity);
       addImage(weather);
     });
@@ -66,6 +66,7 @@ const updateData = (
   document.querySelector(".humidity").innerHTML = humidity + `%`;
 
   document.querySelector(".cityName").innerHTML = `${city},${country}`;
+  localStorage.setItem("city", city);
 };
 const addImage = (weather) => {
   const img = document.querySelector("img");
@@ -77,9 +78,17 @@ const addImage = (weather) => {
     img.src = `./img/snow.png`;
   } else if (weather === `Rain`) {
     img.src = `./img/rain.png`;
+  } else if (weather === "Mist") {
+    img.src = `./img/mist.png`;
   } else {
     img.src = `./img/sun.png`;
   }
+  const date = new Date();
+  const hour = date.getHours();
+  if (hour > 22 || hour < 5) {
+    img.src = `./img/night.png`;
+  }
 };
 button.addEventListener("click", getCityFromInput);
-getCityCoordinates("Londyn");
+
+getCityCoordinates(localStorage.getItem("city") || `London`);

@@ -24,7 +24,7 @@ body {
   width: 50vw;
 }
 h1 {
-  font-size: 60px;
+  font-size: 3vw;
   font-weight: 700;
   width: 100%;
 }
@@ -38,7 +38,7 @@ h1 {
   color: green;
 }
 label {
-  font-size: 30px;
+  font-size: 2vw;
   margin-bottom: 10px;
   width: 100%;
 }
@@ -73,6 +73,7 @@ ul > li {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: 1vw;
   width: 20%;
 }
 ul > li span {
@@ -102,7 +103,7 @@ ul > li span {
     width: 90vw;
   }
   h1 {
-    font-size: 40px;
+    font-size: 10vw;
   }
   ul {
     flex-direction: column;
@@ -113,9 +114,16 @@ ul > li span {
   }
   ul > li {
     border: none;
+    font-size: 5vw;
     margin-top: 10px;
   }
   ul > li:first-child {
     border: none;
+  }
+  label {
+    font-size: 8vw;
+  }
+  img {
+    display: none;
   }
 }
